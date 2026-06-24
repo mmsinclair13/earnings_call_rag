@@ -25,7 +25,7 @@ def split_section(transcript):
         
         if normalized_line in [h.strip().upper() for h in section_header]:
             if current_section:
-                sections[current_section] = "".join(current_content)
+                sections[current_section] = "\n".join(current_content)
             current_section = normalized_line
             current_content = []
         else:
@@ -33,7 +33,7 @@ def split_section(transcript):
                 current_content.append(line)
                 
     if current_section:
-        sections[current_section] = "".join(current_content)
+        sections[current_section] = "\n".join(current_content)
     return sections
 
 if __name__ == "__main__":
@@ -44,19 +44,27 @@ if __name__ == "__main__":
         quarter = transcript["quarter"]
         sections = split_section(transcript)
         all_transcripts[quarter] = sections
-        
-    print(all_transcripts["NVDA-Q3-2026"] ["QUESTION AND ANSWER SECTION"])
+    #   test to see if the sections were separated and can be retrived given the key value pair for the dictionary  
+        # for quarter, sections in all_transcripts.items():
+        #     print(f"\n{quarter}")
+        #     print("Sections found:")
+            
+        #     for section in sections.keys():
+        #         print(f" ={sections}")
+
+# print(all_transcripts["NVDA-Q1-2026"]["CORPORATE PARTICIPANTS"][:500])          
  
-        
+quarter = "NVDA-Q1-2026"
+
+print(
+    all_transcripts[quarter]["MANAGEMENT DISCUSSION SECTION"][:2000]
+)       
 
 
-    # output_file = Path("outputs/transcripts2.json")
-    # with output_file.open("w", encoding="utf-8") as f:
-    #     json.dump(transcripts, f, indent=4)
+output_file = Path("outputs/transcripts2.json")
+with output_file.open("w", encoding="utf-8") as f:
+    json.dump(all_transcripts, f, indent=4)
         
-    # # print(f"Saved transcripts to {output_file}")
-    # print(repr(transcripts[0]["text"][0:100]))
-    # # print(repr(transcripts[:200]))
 
     
 
