@@ -51,15 +51,14 @@ if __name__ == "__main__":
             
         #     for section in sections.keys():
         #         print(f" ={sections}")
-
-# print(all_transcripts["NVDA-Q1-2026"]["CORPORATE PARTICIPANTS"][:500])          
+        
  
 quarter = "NVDA-Q1-2026"
 
-print(
-    all_transcripts[quarter]["MANAGEMENT DISCUSSION SECTION"][:2000]
-)       
-
+# print(
+#     all_transcripts[quarter]["MANAGEMENT DISCUSSION SECTION"][:2000]
+# )       
+# testing to see the formatiing for the all_transcripts list
 
 output_file = Path("outputs/transcripts2.json")
 with output_file.open("w", encoding="utf-8") as f:
