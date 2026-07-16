@@ -64,7 +64,9 @@ output_file = Path("outputs/transcripts2.json")
 with output_file.open("w", encoding="utf-8") as f:
     json.dump(all_transcripts, f, indent=4)
         
-
-    
-
-    
+to do temp Finish the speaker-aware chunking pipeline.
+Add embedding generation and vector search.
+Build an evaluation framework to measure retrieval quality.
+Deploy it with a clean API and a user-facing interface (your planned Streamlit app is a good start).
+Write a strong README with architecture diagrams, design decisions, and sample queries.
+Add Docker support and a simple cloud deployment (for example, on AWS, Azure, or another platform).
