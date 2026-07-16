@@ -1,8 +1,3 @@
-# Goal of ingest.py is to take the pdf from nvidia and make it 1) open
-# 2) extract the text
-# 3 print the infmration necessary: for now just the number of pages, 
-#             file name, first few characters and the totla number of characters extracted
-
 from pypdf import PdfReader
 from pathlib import Path
 import json
